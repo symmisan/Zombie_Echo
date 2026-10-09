@@ -1,0 +1,31 @@
+# Zombie Echo - Design Changes
+
+While developing Zombie Echo, I made a few changes to my original game design as I worked on the gameplay and tested different features.
+
+**Weapons and Ammo**
+
+Originally, I planned for the player to start with a pistol that had limited ammunition. I changed this so the pistol has unlimited reserve ammo, allowing the player to always have a weapon available. I also added a system that automatically switches the player back to the pistol when the shotgun or assault rifle runs out of ammo.
+
+Instead of having weapons randomly spawn around the arena, I changed it so zombies have a chance to drop a shotgun or assault rifle when they die.
+
+**Pickups**
+
+I added a timer to the health, ammo, and weapon pickups so they disappear after 7 seconds if the player doesn't collect them. This encourages the player to move around the arena instead of staying in one place.
+
+**Walls and Vision**
+
+I added walls and obstacles to the arena to make movement and positioning more important. I also changed the flashlight and shooting cones so they stop when they reach a wall instead of going through it. Bullets are also blocked by walls, preventing the player from shooting zombies through obstacles.
+
+**Weapon Balancing**
+
+I adjusted the damage, range, firing speed, and ammunition for each weapon while testing the game. The shotgun deals more damage but has a shorter range, while the assault rifle shoots faster and has a longer range. The pistol remains the default weapon.
+
+**Zombie Difficulty**
+
+I added a wave system where more zombies spawn as the player progresses. Zombie movement speed also increases as the waves go on, making the game more difficult over time.
+
+**Audio and Animations**
+
+I added background music and different gunshot sounds for the pistol, shotgun, and assault rifle. I also added different player appearances depending on the equipped weapon, along with reload animations.
+
+Overall, these changes were made to improve the gameplay, balance the weapons, and make surviving the zombie waves more challenging.
