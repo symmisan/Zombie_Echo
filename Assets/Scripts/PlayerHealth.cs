@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        // Prevent health from dropping below zero
         currentHealth =
             Mathf.Max(currentHealth - damage, 0);
 
@@ -30,6 +31,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void Heal(int amount)
     {
+        // Prevent healing beyond the maximum health
         currentHealth =
             Mathf.Min(currentHealth + amount, maxHealth);
     }

@@ -34,6 +34,7 @@ public class ZombieFootstepVisuals : MonoBehaviour
         previousPosition =
             transform.position;
 
+        // Randomize the first step so zombies don't all step together
         stepTimer =
             Random.Range(0f, stepInterval);
     }
@@ -57,6 +58,7 @@ public class ZombieFootstepVisuals : MonoBehaviour
                 currentPosition -
                 previousPosition;
 
+            // Only create footprints when the zombie is moving
             if (movementDirection.sqrMagnitude > 0.001f)
             {
                 if (IsOutsideVisionCone())
@@ -70,10 +72,12 @@ public class ZombieFootstepVisuals : MonoBehaviour
                 previousPosition =
                     currentPosition;
 
+                // Alternate between left and right footprints
                 leftFoot =
                     !leftFoot;
             }
 
+            // Slightly vary the timing between steps
             stepTimer =
                 stepInterval *
                 Random.Range(0.85f, 1.15f);
@@ -107,6 +111,7 @@ public class ZombieFootstepVisuals : MonoBehaviour
         Vector2 movementDirection
     )
     {
+        // Remove missing footprints and limit how many can exist
         activeFootsteps.RemoveAll(
             footprint => footprint == null
         );
@@ -117,6 +122,7 @@ public class ZombieFootstepVisuals : MonoBehaviour
             activeFootsteps.RemoveAt(0);
         }
 
+        // Find the direction perpendicular to zombie movement
         Vector2 sideDirection =
             new Vector2(
                 -movementDirection.y,
@@ -137,6 +143,7 @@ public class ZombieFootstepVisuals : MonoBehaviour
                 Quaternion.identity
             );
 
+        // Rotate the footprint to match the zombie's movement
         float rotationAngle =
             Mathf.Atan2(
                 movementDirection.y,

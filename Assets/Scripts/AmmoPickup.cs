@@ -1,11 +1,10 @@
-
 using UnityEngine;
 
 public class AmmoPickup : MonoBehaviour
 {
     public int ammoAmount = 24;
 
-    // NEW: Pickup disappears after 7 seconds
+    // Pickup disappears after 7 seconds
     public float lifetime = 7f;
 
     void Start()

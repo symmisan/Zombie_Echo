@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
+        // Prevent diagonal movement from being faster
         movement = movement.normalized;
     }
 

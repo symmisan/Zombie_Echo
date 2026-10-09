@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class ShootingCone : MonoBehaviour
@@ -69,10 +68,12 @@ public class ShootingCone : MonoBehaviour
             Mathf.Abs(horizontal) > 0.1f ||
             Mathf.Abs(vertical) > 0.1f;
 
+        // Use a wider cone while moving
         float currentAngle = isMoving
             ? playerShooting.CurrentMovingConeAngle
             : playerShooting.CurrentStandingConeAngle;
 
+        // Match the visible cone to the actual targeting range
         float currentLength =
             playerShooting.CurrentShootingRange * 0.7f;
 
@@ -110,7 +111,7 @@ public class ShootingCone : MonoBehaviour
 
             worldDirection.Normalize();
 
-            // NEW: Stop shooting cone at walls.
+            // Stop shooting cone at walls.
             RaycastHit2D wallHit =
                 Physics2D.Raycast(
                     origin,

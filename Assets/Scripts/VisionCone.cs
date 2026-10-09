@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class VisionCone : MonoBehaviour
@@ -88,7 +87,7 @@ public class VisionCone : MonoBehaviour
 
             worldDirection.Normalize();
 
-            // NEW: Detect walls in each direction.
+            // Detect walls in each direction.
             RaycastHit2D wallHit =
                 Physics2D.Raycast(
                     origin,

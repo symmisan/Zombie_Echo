@@ -39,12 +39,14 @@ public class ZombieVisibility : MonoBehaviour
         float distance =
             directionToZombie.magnitude;
 
+        // Check how far the zombie is from the player's facing direction
         float angle =
             Vector2.Angle(
                 player.up,
                 directionToZombie
             );
 
+        // Zombie must be within both the vision range and angle
         bool insideVisionCone =
             distance <= visionLength &&
             angle <= visionAngle / 2f;
@@ -57,6 +59,7 @@ public class ZombieVisibility : MonoBehaviour
         if (zombieRenderers == null)
             return;
 
+        // Show or hide every sprite attached to the zombie
         foreach (
             SpriteRenderer renderer
             in zombieRenderers

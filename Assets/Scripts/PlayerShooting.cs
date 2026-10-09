@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 // All weapons available in the game
@@ -253,7 +252,7 @@ public class PlayerShooting : MonoBehaviour
         nextFireTime = Time.time;
     }
 
-    // NEW: Check if a wall blocks the shot.
+    // Check if a wall blocks the shot.
     bool IsWallBlocking(Vector2 start, Vector2 end)
     {
         Vector2 direction = end - start;
@@ -321,7 +320,7 @@ public class PlayerShooting : MonoBehaviour
             if (!insideShootingCone)
                 continue;
 
-            // NEW: Ignore zombies behind walls.
+            // Ignore zombies behind walls.
             if (IsWallBlocking(
                 transform.position,
                 zombie.transform.position))
@@ -379,7 +378,7 @@ public class PlayerShooting : MonoBehaviour
             (Vector2)transform.position +
             direction * 0.4f;
 
-        // NEW: Check if a wall is hit first.
+        // Check if a wall is hit first.
         RaycastHit2D wallHit =
             Physics2D.Raycast(
                 startPoint,
@@ -416,7 +415,7 @@ public class PlayerShooting : MonoBehaviour
                 continue;
             }
 
-            // NEW: Stop at a wall.
+            // Stop at a wall.
             if ((wallLayers.value &
                 (1 << hit.collider.gameObject.layer)) != 0)
             {

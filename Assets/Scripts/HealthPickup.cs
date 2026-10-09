@@ -1,11 +1,10 @@
-
 using UnityEngine;
 
 public class HealthPickup : MonoBehaviour
 {
     public int healAmount = 1;
 
-    // NEW: Health pickup disappears after 7 seconds
+    // Health pickup disappears after 7 seconds
     public float lifetime = 7f;
 
     void Start()
@@ -15,6 +14,7 @@ public class HealthPickup : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        // Only allow the player to collect health
         if (other.CompareTag("Player"))
         {
             PlayerHealth health =

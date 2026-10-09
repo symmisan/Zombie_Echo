@@ -8,6 +8,7 @@ public class AmmoUI : MonoBehaviour
 
     void Update()
     {
+        // Prevent errors if either reference is missing
         if (playerShooting == null || ammoText == null)
             return;
 

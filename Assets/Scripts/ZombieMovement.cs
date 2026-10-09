@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class ZombieMovement : MonoBehaviour
@@ -100,7 +99,7 @@ public class ZombieMovement : MonoBehaviour
                     Time.time + attackCooldown;
             }
 
-            // NEW: Damage player within attack range.
+            // Damage player within attack range.
             if (Time.time >= nextDamageTime)
             {
                 if (playerHealth != null)

@@ -6,6 +6,7 @@ public class PlayerAim : MonoBehaviour
 
     void Update()
     {
+        // Convert the mouse position from screen coordinates to the game world
         Vector3 mousePosition =
             playerCamera.ScreenToWorldPoint(Input.mousePosition);
 
